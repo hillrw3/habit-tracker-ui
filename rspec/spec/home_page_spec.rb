@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe 'the home page' do
-  it 'says hello' do
+  before do
     visit root_path
+  end
 
-    expect(page).to have_content 'HELLO'
+  it 'has a delightful little greeting' do
+    expect(page).to have_content 'Welcome to HabitTracker'
   end
 end
