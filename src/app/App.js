@@ -7,8 +7,7 @@ export default class App extends React.Component {
     render() {
         const {dispatch, login: {username, authenticated}} = this.props
 
-        debugger
-        return (
+        return (w
             <div>
                 <nav>
                     {
