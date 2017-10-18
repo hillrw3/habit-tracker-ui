@@ -1,10 +1,12 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'capybara/rspec'
+require 'byebug'
 require_relative '../helpers/navigation'
 require_relative '../helpers/spec_runner'
 
 RSpec.configure do |config|
   config.include Capybara::DSL
+  config.include Byebug
   config.include Navigation
 
   Capybara.register_driver :selenium do |app|

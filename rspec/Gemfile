@@ -15,3 +15,6 @@ gem "selenium-webdriver", "~> 3.6"
 
 # Added at 2017-10-12 20:51:52 -0600 by Rob:
 gem "httparty", "~> 0.15.6"
+
+# Added at 2017-10-18 16:10:29 -0600 by Rob:
+gem "byebug", "~> 9.1"

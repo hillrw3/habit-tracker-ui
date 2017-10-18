@@ -13,3 +13,12 @@ export const loginSuccess = (body) => {
         body
     }
 }
+
+export const UPDATE_INPUT = 'UPDATE_INPUT'
+export const updateInput = (event, fieldName) => {
+    return {
+        type: UPDATE_INPUT,
+        event,
+        fieldName
+    }
+}

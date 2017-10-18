@@ -1,21 +1,25 @@
 import React from 'react'
 import {connect} from "react-redux"
 
-import Login from "../login/Login"
+import {LoginContainer} from "../login/Login"
 
 export default class App extends React.Component {
     render() {
-        const {dispatch, login} = this.props
-        const username = login ? login.username : ""
+        const {dispatch, login: {username, authenticated}} = this.props
 
+        debugger
         return (
             <div>
                 <nav>
-                    <p>Hello, {username}</p>
+                    {
+                        authenticated ?
+                            <p className='auth-indicator'>Hello, {username}</p> :
+                            null
+                    }
                 </nav>
 
                 <h1>Welcome to HabitTracker</h1>
-                <Login dispatch={dispatch}/>
+                <LoginContainer dispatch={dispatch}/>
 
             </div>
         )

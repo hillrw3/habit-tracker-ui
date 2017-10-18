@@ -5,8 +5,6 @@ describe 'Login' do
     it 'indicates the user is signed in' do
       visit root_path
 
-      expect(page).not_to have_content 'Hello, bob'
-
       within('.login-form') do
         fill_in 'Username', with: 'bob'
         fill_in 'Password', with: 'password'
