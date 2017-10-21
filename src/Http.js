@@ -1,6 +1,6 @@
 export default class Http {
     static post(route, body) {
-        return fetch(`http://localhost:3000${route}`, {
+        return fetch(`${API_URL}${route}`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

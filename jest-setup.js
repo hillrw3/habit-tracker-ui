@@ -6,6 +6,7 @@ Enzyme.configure({ adapter: new Adapter() });
 global.shallow = shallow;
 global.render = render;
 global.mount = mount;
+global.API_URL = 'http://example.com'
 global.localStorage = {
     getItem: () => {},
     setItem: () => {},

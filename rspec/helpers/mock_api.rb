@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/cors'
 
-API_PORT = 3000
+API_PORT = 3001
 
 set :port, API_PORT
 set :allow_origin, "*"

@@ -7,8 +7,7 @@ class SpecRunner
   extend MockServer
 
   def self.start
-    kill_api
-    Process.spawn("cd .. && webpack-dev-server --port=#{ui_port} > /dev/null")
+    Process.spawn("cd .. && webpack-dev-server --port=#{ui_port} --env.API_URL=http://localhost:3001 > /dev/null")
     Process.spawn("cd #{api_path} && ruby mock_api.rb > /dev/null")
     started = false
 
@@ -27,7 +26,7 @@ class SpecRunner
     end
 
     unless started
-      raise 'A server (React or Sinatra) failed to start'
+      raise 'React or Sinatra failed to start'
     end
   end
 
