@@ -1,9 +1,9 @@
 export default class Storage {
-    static setItem(key, value) {
+    static set(key, value) {
         localStorage.setItem(key, value)
     }
 
-    static getItem(key) {
+    static get(key) {
         return localStorage.getItem(key)
     }
 }

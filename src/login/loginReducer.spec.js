@@ -24,7 +24,7 @@ describe('loginReducer', () => {
 
     describe(LOGIN_SUCCESS, () => {
         it('stores the username and auth token', () => {
-            const setItemSpy = spyOn(Storage, 'setItem')
+            const setItemSpy = spyOn(Storage, 'set')
             const body = {token: 'superSecure'}
             const action = {
                 type: LOGIN_SUCCESS,
