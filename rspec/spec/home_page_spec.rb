@@ -6,6 +6,6 @@ describe 'the home page' do
   end
 
   it 'has a delightful little greeting' do
-    expect(page).to have_content 'Welcome to HabitTracker'
+    expect(page).to have_content 'HabitTracker'
   end
 end

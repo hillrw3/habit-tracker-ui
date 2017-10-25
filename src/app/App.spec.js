@@ -1,4 +1,5 @@
 import React from 'react'
+import {AppBar} from 'material-ui'
 import App from "./App";
 import {defaultState} from "../login/loginReducer"
 
@@ -11,12 +12,10 @@ describe('Home Page', () => {
     })
 
     it('displays an auth indicator when user is authenticated', () => {
-        let props = {...defaultProps, login: {authenticated: false}}
-        let app = shallow(<App {...props}/>)
-        expect(app.find('.auth-indicator').length).toEqual(0)
+        let app = shallow(<App {...defaultProps}/>).instance()
+        expect(app.authIndicator({authenticated: false})).toEqual(null)
 
-        props = {...defaultProps, login: {authenticated: true}}
-        app = shallow(<App {...props}/>)
-        expect(app.find('.auth-indicator').length).toEqual(1)
+        app = shallow(<App {...defaultProps}/>).instance()
+        expect(app.authIndicator({authenticated: true})).not.toEqual(null)
     })
 })

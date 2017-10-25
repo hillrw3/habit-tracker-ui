@@ -1,7 +1,9 @@
 import React from 'react'
+import {connect} from "react-redux"
+import {Card, CardTitle, CardText, TextField, RaisedButton} from 'material-ui'
+
 import {loginRequest, loginSuccess, updateInput} from "../actions"
 import Http from "../Http"
-import {connect} from "react-redux"
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -12,11 +14,17 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <form className="login-form" onSubmit={this.handleSubmit}>
-                <label>Username<input type="text" onChange={this.handleChange('username')}/></label>
-                <label>Password<input type="password" onChange={this.handleChange('password')} /></label>
-                <input className="login-form__submit" type="submit" value="Submit"/>
-            </form>
+            <Card>
+                <CardTitle title="Login"/>
+                <CardText>
+                    <form className="login-form" onSubmit={this.handleSubmit}>
+                        <TextField floatingLabelText="Username" onChange={this.handleChange('username')}/>
+                        <TextField type="password" floatingLabelText="Password" onChange={this.handleChange('password')}/>
+                        <br/>
+                        <RaisedButton type="submit" className="login-form__submit" label="Submit" primary={true} />
+                    </form>
+                </CardText>
+            </Card>
         )
     }
 
