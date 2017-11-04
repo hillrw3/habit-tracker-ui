@@ -17,7 +17,12 @@ export default class App extends React.Component {
                     iconElementRight={authIndicator}
                     iconStyleRight={{color: 'white'}}
                 />
-                <LoginContainer dispatch={dispatch}/>
+                {
+                    !authenticated ?
+                        <LoginContainer dispatch={dispatch}/> :
+                        null
+
+                }
             </div>
         )
     }
