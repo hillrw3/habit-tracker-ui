@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from "react-redux"
-import {AppBar} from 'material-ui'
 
 import {LoginContainer} from "../login/Login"
+import {HabitListContainer} from "../habit-list/HabitList"
+import {AppBar} from "material-ui"
 
 export default class App extends React.Component {
     render() {
@@ -18,9 +19,9 @@ export default class App extends React.Component {
                     iconStyleRight={{color: 'white'}}
                 />
                 {
-                    !authenticated ?
-                        <LoginContainer dispatch={dispatch}/> :
-                        null
+                    authenticated ?
+                        <HabitListContainer dispatch={dispatch}/> :
+                        <LoginContainer dispatch={dispatch}/>
 
                 }
             </div>

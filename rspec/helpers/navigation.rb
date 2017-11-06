@@ -8,4 +8,9 @@ module Navigation
   def ui_port
     UI_PORT
   end
+
+  def login
+    visit root_path
+    execute_script 'localStorage.setItem("token", "token")'
+  end
 end
