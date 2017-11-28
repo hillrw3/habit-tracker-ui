@@ -1,7 +1,7 @@
 import React from 'react'
 import {defaultState} from "./habitReducer"
 import HabitList from "./HabitList"
-import Http from "../Http"
+import Http from "../util/Http"
 
 const defaultProps = {...defaultState, dispatch: jasmine.createSpy()}
 

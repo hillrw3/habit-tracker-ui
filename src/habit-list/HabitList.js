@@ -3,7 +3,7 @@ import {
     Card, CardText, CardTitle, Table, TableBody, TableHeader, TableHeaderColumn, TableRow,
     TableRowColumn
 } from "material-ui"
-import Http from "../Http"
+import Http from "../util/Http"
 import {habitsRequest, habitsSuccess} from "../actions"
 import {connect} from "react-redux"
 
@@ -39,7 +39,7 @@ export default class HabitList extends React.Component {
         return (
             habits.map(habit =>
                 <TableRow key={habit.id}>
-                    <TableRowColumn>{habit.title}</TableRowColumn>
+                    <TableRowColumn>{`${habit.actualFrequency}/${habit.targetFrequency} ${habit.title}`}</TableRowColumn>
                 </TableRow>
             )
         )

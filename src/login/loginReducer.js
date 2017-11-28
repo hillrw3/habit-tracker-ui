@@ -1,5 +1,5 @@
 import {LOGIN_REQUEST, LOGIN_SUCCESS, UPDATE_INPUT} from "../actions"
-import Storage from "../Storage"
+import Storage from "../util/Storage"
 
 export const defaultState = {
     fetching: false,

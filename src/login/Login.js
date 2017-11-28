@@ -3,7 +3,7 @@ import {connect} from "react-redux"
 import {Card, CardTitle, CardText, TextField, RaisedButton} from 'material-ui'
 
 import {loginRequest, loginSuccess, updateInput} from "../actions"
-import Http from "../Http"
+import Http from "../util/Http"
 
 export default class Login extends React.Component {
     constructor(props) {

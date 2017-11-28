@@ -1,7 +1,7 @@
 import reducer, {defaultState} from './loginReducer'
-import Http from "../Http"
+import Http from "../util/Http"
 import {LOGIN_REQUEST, LOGIN_SUCCESS} from "../actions"
-import Storage from "../Storage"
+import Storage from "../util/Storage"
 
 describe('loginReducer', () => {
     const state = defaultState

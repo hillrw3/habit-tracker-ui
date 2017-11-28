@@ -1,4 +1,5 @@
 import Storage from './Storage'
+import humps from 'humps'
 
 export default class Http {
     static post(route, body) {
@@ -20,6 +21,10 @@ export default class Http {
                 "X-Auth-Token": Storage.get('token')
             }
         })
-            .then((data) => data.json())
+            .then((data) => {
+                return data.json().then(parsedData => {
+                    return humps.camelizeKeys(parsedData)
+                })
+            })
     }
 }

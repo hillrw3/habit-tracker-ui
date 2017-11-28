@@ -3,7 +3,7 @@ import React from 'react'
 import Login from './Login'
 import {loginRequest, loginSuccess} from "../actions"
 import {defaultState} from "./loginReducer"
-import Http from "../Http"
+import Http from "../util/Http"
 
 const fakeEvent = {
     preventDefault: () => {},
