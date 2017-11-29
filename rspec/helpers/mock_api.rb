@@ -16,10 +16,8 @@ post '/login' do
 end
 
 get '/habits' do
-  [
-      {'id' => 1, 'title' => 'go on a run', 'target_frequency' => 2, 'actual_frequency' => 1},
-      {'id'=> 2, 'title' => 'vacuum', 'target_frequency' => 1, 'actual_frequency' => 0}
-  ].to_json
+  return [] if env['HTTP_X_AUTH_TOKEN'] == 'no_habits'
+  DEFAULT_HABITS
 end
 
 module MockServer
@@ -31,3 +29,8 @@ module MockServer
     File.dirname(__FILE__)
   end
 end
+
+DEFAULT_HABITS = [
+    {'id' => 1, 'title' => 'go on a run', 'target_frequency' => 2, 'actual_frequency' => 1},
+    {'id' => 2, 'title' => 'vacuum', 'target_frequency' => 1, 'actual_frequency' => 0}
+].to_json

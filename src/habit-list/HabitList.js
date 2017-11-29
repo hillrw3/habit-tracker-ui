@@ -28,7 +28,7 @@ export default class HabitList extends React.Component {
     }
 
     tableContent(habits) {
-        if (!habits) {
+        if (habits.length === 0) {
             return (
                 <TableRow>
                     <TableRowColumn>Make some habits!!</TableRowColumn>

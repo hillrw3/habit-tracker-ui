@@ -12,7 +12,6 @@ describe 'Login' do
       end
 
       expect(page).to have_content 'Hello, bob'
-      expect(page).not_to have_css '.login-form'
     end
   end
 end

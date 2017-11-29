@@ -20,6 +20,11 @@ RSpec.configure do |config|
     config.default_driver        = :selenium
   end
 
+  config.before(:each) do
+    visit root_path
+    execute_script 'localStorage.clear()'
+  end
+
   config.before(:suite) do
     SpecRunner.start
   end

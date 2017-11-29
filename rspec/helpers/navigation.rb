@@ -9,8 +9,7 @@ module Navigation
     UI_PORT
   end
 
-  def login
-    visit root_path
-    execute_script 'localStorage.setItem("token", "token")'
+  def login(token="token")
+    execute_script "localStorage.setItem('token', '#{token}')"
   end
 end
