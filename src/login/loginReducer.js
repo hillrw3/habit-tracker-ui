@@ -4,7 +4,7 @@ import Storage from "../util/Storage"
 export const defaultState = {
     fetching: false,
     authenticated: !!Storage.get('token'),
-    username: Storage.get('username'),
+    email: Storage.get('email'),
 }
 
 const loginReducer = (state = defaultState, action) => {
@@ -16,7 +16,7 @@ const loginReducer = (state = defaultState, action) => {
             }
         case LOGIN_SUCCESS:
             Storage.set('token', action.body.token)
-            Storage.set('username', state.username)
+            Storage.set('email', state.email)
 
             return {
                 ...state,

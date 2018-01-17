@@ -18,7 +18,7 @@ export default class Login extends React.Component {
                 <CardTitle title="Login"/>
                 <CardText>
                     <form className="login-form" onSubmit={this.handleSubmit}>
-                        <TextField floatingLabelText="Username" onChange={this.handleChange('username')}/>
+                        <TextField floatingLabelText="email" onChange={this.handleChange('email')}/>
                         <TextField type="password" floatingLabelText="Password" onChange={this.handleChange('password')}/>
                         <br/>
                         <RaisedButton type="submit" className="login-form__submit" label="Submit" primary={true} />
@@ -33,12 +33,12 @@ export default class Login extends React.Component {
         e.stopPropagation()
 
         const {
-            username,
+            email,
             password,
             dispatch
         } = this.props
 
-        const body = {username, password}
+        const body = {email, password}
 
         dispatch(loginRequest(body))
         Http.post("/login", body)

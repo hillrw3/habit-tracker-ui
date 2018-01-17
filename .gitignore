@@ -2,3 +2,4 @@
 node_modules
 dist/
 rspec/.byebug_history
+.idea/*

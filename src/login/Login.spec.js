@@ -20,7 +20,7 @@ describe('Login', () => {
     })
 
     it('submits user credentials based on state', () => {
-        const credentials = {username: 'bob', password: 'password'}
+        const credentials = {email: 'bob', password: 'password'}
         const componentInstance = renderComponent(credentials).instance()
 
         componentInstance.handleSubmit(fakeEvent)
@@ -30,7 +30,7 @@ describe('Login', () => {
 
     describe('on success', () => {
         it('dispatches the success call', () => {
-            const credentials = {username: 'bob', password: 'password'}
+            const credentials = {email: 'bob', password: 'password'}
             const componentInstance = renderComponent(credentials).instance()
 
             componentInstance.handleSubmit(fakeEvent)

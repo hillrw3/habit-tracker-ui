@@ -10,7 +10,7 @@ describe('loginReducer', () => {
         it('sets fetching to true', () => {
             spyOn(Http, 'post')
 
-            const body = {username: 'bob', password: 'password'}
+            const body = {email: 'bob', password: 'password'}
             const action = {
                 type: LOGIN_REQUEST,
                 body
@@ -23,7 +23,7 @@ describe('loginReducer', () => {
     })
 
     describe(LOGIN_SUCCESS, () => {
-        it('stores the username and auth token', () => {
+        it('stores the email and auth token', () => {
             const setItemSpy = spyOn(Storage, 'set')
             const body = {token: 'superSecure'}
             const action = {
@@ -31,10 +31,10 @@ describe('loginReducer', () => {
                 body
             }
 
-            reducer({...state, username: 'bill'}, action)
+            reducer({...state, email: 'bill'}, action)
 
             expect(setItemSpy).toHaveBeenCalledWith('token', 'superSecure')
-            expect(setItemSpy).toHaveBeenCalledWith('username', 'bill')
+            expect(setItemSpy).toHaveBeenCalledWith('email', 'bill')
         })
     })
 })

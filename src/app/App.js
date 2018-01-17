@@ -7,8 +7,8 @@ import {AppBar} from "material-ui"
 
 export default class App extends React.Component {
     render() {
-        const {dispatch, login: {username, authenticated}} = this.props
-        const authIndicator = this.authIndicator({authenticated, username})
+        const {dispatch, login: {email, authenticated}} = this.props
+        const authIndicator = this.authIndicator({authenticated, email})
 
         return (
             <div>
@@ -28,12 +28,12 @@ export default class App extends React.Component {
         )
     }
 
-    authIndicator({authenticated, username}) {
+    authIndicator({authenticated, email}) {
         if (!authenticated) {
             return null
         }
 
-        return <p className='auth-indicator'>Hello, {username}</p>
+        return <p className='auth-indicator'>Hello, {email}</p>
     }
 }
 
